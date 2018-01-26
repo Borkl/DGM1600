@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Textadevnture : MonoBehaviour {
 
     public enum States { cell, window, gate, bed, go, continuing };
     public States currentState;
+    public Text textobject;
     
-
-
-
-	// Use this for initialization
 	void Start () {
         currentState = States.cell;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		if (currentState == States.cell)
         {
@@ -29,7 +27,7 @@ public class Textadevnture : MonoBehaviour {
     private void Cell()
     {
         print("You are in a jail cell. It is gross and crusty. You don't remeber why you are in here. " +
-              "There is a Window. " +
+              textobject.text = "There is a Window. " +
               "There is a Gate. " +
               " There is a Bed. " +
               "Press W for Window, G for Gate, B for Bed. ");
